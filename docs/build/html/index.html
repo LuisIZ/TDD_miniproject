@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Miniproject’s documentation! &mdash; Miniproject 3 of June, 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=31be2ac7"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Miniproject
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Miniproject’s documentation!</a></li>
+<li><a class="reference internal" href="#module-app.app">Miniproject’s API app.py</a><ul>
+<li><a class="reference internal" href="#app.app.calculate_distance"><code class="docutils literal notranslate"><span class="pre">calculate_distance()</span></code></a></li>
+<li><a class="reference internal" href="#app.app.fetch_coordinates"><code class="docutils literal notranslate"><span class="pre">fetch_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#app.app.get_coordinates"><code class="docutils literal notranslate"><span class="pre">get_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#app.app.get_distance"><code class="docutils literal notranslate"><span class="pre">get_distance()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.test_app">Miniproject’s API test_app.py</a><ul>
+<li><a class="reference internal" href="#app.test_app.client"><code class="docutils literal notranslate"><span class="pre">client()</span></code></a></li>
+<li><a class="reference internal" href="#app.test_app.test_get_coordinates_failure"><code class="docutils literal notranslate"><span class="pre">test_get_coordinates_failure()</span></code></a></li>
+<li><a class="reference internal" href="#app.test_app.test_get_coordinates_success"><code class="docutils literal notranslate"><span class="pre">test_get_coordinates_success()</span></code></a></li>
+<li><a class="reference internal" href="#app.test_app.test_get_distance_failure"><code class="docutils literal notranslate"><span class="pre">test_get_distance_failure()</span></code></a></li>
+<li><a class="reference internal" href="#app.test_app.test_get_distance_success"><code class="docutils literal notranslate"><span class="pre">test_get_distance_success()</span></code></a></li>
+<li><a class="reference internal" href="#app.test_app.test_the_result_is_correct_for_all_inputs_get_coordinates"><code class="docutils literal notranslate"><span class="pre">test_the_result_is_correct_for_all_inputs_get_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#app.test_app.test_the_result_is_correct_for_all_inputs_get_distance"><code class="docutils literal notranslate"><span class="pre">test_the_result_is_correct_for_all_inputs_get_distance()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Miniproject</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to Miniproject’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-miniproject-s-documentation">
+<h1>Welcome to Miniproject’s documentation!<a class="headerlink" href="#welcome-to-miniproject-s-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="module-app.app">
+<span id="miniproject-s-api-app-py"></span><h1>Miniproject’s API app.py<a class="headerlink" href="#module-app.app" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.app.calculate_distance">
+<span class="sig-prename descclassname"><span class="pre">app.app.</span></span><span class="sig-name descname"><span class="pre">calculate_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/app.html#calculate_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.app.calculate_distance" title="Link to this definition"></a></dt>
+<dd><p>Function to calculate the distance between two geographical points.</p>
+<p>Parameters:
+lat1 (float): Latitude of the first point.
+lon1 (float): Longitude of the first point.
+lat2 (float): Latitude of the second point.
+lon2 (float): Longitude of the second point.</p>
+<p>Returns:
+dict: A dictionary containing the distance in kilometers.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.app.fetch_coordinates">
+<span class="sig-prename descclassname"><span class="pre">app.app.</span></span><span class="sig-name descname"><span class="pre">fetch_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">city_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/app.html#fetch_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.app.fetch_coordinates" title="Link to this definition"></a></dt>
+<dd><p>Function to fetch the coordinates of a given city using the Nominatim OpenStreetMap API.</p>
+<p>Parameters:
+city_name (str): The name of the city to find coordinates for.</p>
+<p>Returns:
+dict: A dictionary containing the latitude and longitude of the city.</p>
+<p>Raises:
+ValueError: If the city is not found or there is an error in the API request.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.app.get_coordinates">
+<span class="sig-prename descclassname"><span class="pre">app.app.</span></span><span class="sig-name descname"><span class="pre">get_coordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/app.html#get_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.app.get_coordinates" title="Link to this definition"></a></dt>
+<dd><p>API endpoint to get the coordinates of a given city.</p>
+<p>Parameters:
+city_name (str): The name of the city to find coordinates for.</p>
+<p>Returns:
+dict: A dictionary containing the latitude and longitude of the city.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.app.get_distance">
+<span class="sig-prename descclassname"><span class="pre">app.app.</span></span><span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/app.html#get_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.app.get_distance" title="Link to this definition"></a></dt>
+<dd><p>API endpoint to calculate the distance between two geographical points.</p>
+<p>Parameters:
+lat1 (float): Latitude of the first point.
+lon1 (float): Longitude of the first point.
+lat2 (float): Latitude of the second point.
+lon2 (float): Longitude of the second point.</p>
+<p>Returns:
+dict: A dictionary containing the distance in kilometers.</p>
+</dd></dl>
+
+</section>
+<section id="module-app.test_app">
+<span id="miniproject-s-api-test-app-py"></span><h1>Miniproject’s API test_app.py<a class="headerlink" href="#module-app.test_app" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.client">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.client" title="Link to this definition"></a></dt>
+<dd><p>Pytest fixture to set up the test client for the Flask app.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>client</em> – A Flask test client.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.test_get_coordinates_failure">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">test_get_coordinates_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#test_get_coordinates_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.test_get_coordinates_failure" title="Link to this definition"></a></dt>
+<dd><p>Test case to verify the failure response of the get_coordinates endpoint for an unknown city.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – The Flask test client.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Asserts:</dt><dd><ul class="simple">
+<li><p>The response status code is 404 (Not Found).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.test_get_coordinates_success">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">test_get_coordinates_success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#test_get_coordinates_success"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.test_get_coordinates_success" title="Link to this definition"></a></dt>
+<dd><p>Test case to verify the successful response of the get_coordinates endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – The Flask test client.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Asserts:</dt><dd><ul class="simple">
+<li><p>The response status code is 200 (OK).</p></li>
+<li><p>The response JSON contains ‘latitude’.</p></li>
+<li><p>The response JSON contains ‘longitude’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.test_get_distance_failure">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">test_get_distance_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#test_get_distance_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.test_get_distance_failure" title="Link to this definition"></a></dt>
+<dd><p>Test case to verify the failure response of the get_distance endpoint when parameters are missing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – The Flask test client.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Asserts:</dt><dd><ul class="simple">
+<li><p>The response status code is 400 (Bad Request).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.test_get_distance_success">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">test_get_distance_success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#test_get_distance_success"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.test_get_distance_success" title="Link to this definition"></a></dt>
+<dd><p>Test case to verify the successful response of the get_distance endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – The Flask test client.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Asserts:</dt><dd><ul class="simple">
+<li><p>The response status code is 200 (OK).</p></li>
+<li><p>The response JSON contains ‘distance’.</p></li>
+<li><p>The distance value is non-negative.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.test_the_result_is_correct_for_all_inputs_get_coordinates">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">test_the_result_is_correct_for_all_inputs_get_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_lon</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#test_the_result_is_correct_for_all_inputs_get_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.test_the_result_is_correct_for_all_inputs_get_coordinates" title="Link to this definition"></a></dt>
+<dd><p>Parameterized test case to verify the get_coordinates endpoint for multiple cities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – The Flask test client.</p></li>
+<li><p><strong>city_name</strong> – The name of the city to get coordinates for.</p></li>
+<li><p><strong>expected_lat</strong> – The expected latitude of the city.</p></li>
+<li><p><strong>expected_lon</strong> – The expected longitude of the city.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Asserts:</dt><dd><ul class="simple">
+<li><p>The response status code is 200 (OK).</p></li>
+<li><p>The latitude value is within 1km tolerance of the expected latitude.</p></li>
+<li><p>The longitude value is within 1km tolerance of the expected longitude.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.test_app.test_the_result_is_correct_for_all_inputs_get_distance">
+<span class="sig-prename descclassname"><span class="pre">app.test_app.</span></span><span class="sig-name descname"><span class="pre">test_the_result_is_correct_for_all_inputs_get_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_distance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/test_app.html#test_the_result_is_correct_for_all_inputs_get_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.test_app.test_the_result_is_correct_for_all_inputs_get_distance" title="Link to this definition"></a></dt>
+<dd><p>Parameterized test case to verify the get_distance endpoint for multiple pairs of coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – The Flask test client.</p></li>
+<li><p><strong>lat1</strong> – The latitude of the first point.</p></li>
+<li><p><strong>lon1</strong> – The longitude of the first point.</p></li>
+<li><p><strong>lat2</strong> – The latitude of the second point.</p></li>
+<li><p><strong>lon2</strong> – The longitude of the second point.</p></li>
+<li><p><strong>expected_distance</strong> – The expected distance between the two points.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Asserts:</dt><dd><ul class="simple">
+<li><p>The response status code is 200 (OK).</p></li>
+<li><p>The distance value is within 5km tolerance of the expected distance.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Luis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

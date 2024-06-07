@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>app.test_app &mdash; Miniproject 3 of June, 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=31be2ac7"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Miniproject
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Miniproject</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">app.test_app</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for app.test_app</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+
+<span class="c1"># Fixture to create a test client for the Flask app</span>
+<div class="viewcode-block" id="client">
+<a class="viewcode-back" href="../../index.html#app.test_app.client">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span> <span class="nf">client</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pytest fixture to set up the test client for the Flask app.</span>
+<span class="sd">    </span>
+<span class="sd">    Yields:</span>
+<span class="sd">        client: A Flask test client.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">client</span></div>
+
+
+<span class="c1"># Test case to check the successful response of get_coordinates endpoint</span>
+<div class="viewcode-block" id="test_get_coordinates_success">
+<a class="viewcode-back" href="../../index.html#app.test_app.test_get_coordinates_success">[docs]</a>
+<span class="k">def</span> <span class="nf">test_get_coordinates_success</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test case to verify the successful response of the get_coordinates endpoint.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        client: The Flask test client.</span>
+
+<span class="sd">    Asserts:</span>
+<span class="sd">        - The response status code is 200 (OK).</span>
+<span class="sd">        - The response JSON contains &#39;latitude&#39;.</span>
+<span class="sd">        - The response JSON contains &#39;longitude&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get_coordinates/?city_name=Lima, Peru&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>  <span class="c1"># Check if the status code is 200 (OK)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>  <span class="c1"># Get the response data in JSON format</span>
+    <span class="k">assert</span> <span class="s1">&#39;latitude&#39;</span> <span class="ow">in</span> <span class="n">data</span>  <span class="c1"># Check if &#39;latitude&#39; is in the response data</span>
+    <span class="k">assert</span> <span class="s1">&#39;longitude&#39;</span> <span class="ow">in</span> <span class="n">data</span>  <span class="c1"># Check if &#39;longitude&#39; is in the response data</span></div>
+
+
+<span class="c1"># Test case to check the failure response of get_coordinates endpoint for an unknown city</span>
+<div class="viewcode-block" id="test_get_coordinates_failure">
+<a class="viewcode-back" href="../../index.html#app.test_app.test_get_coordinates_failure">[docs]</a>
+<span class="k">def</span> <span class="nf">test_get_coordinates_failure</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test case to verify the failure response of the get_coordinates endpoint for an unknown city.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        client: The Flask test client.</span>
+
+<span class="sd">    Asserts:</span>
+<span class="sd">        - The response status code is 404 (Not Found).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get_coordinates/?city_name=UnknownCityXYZ&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span>  <span class="c1"># Check if the status code is 404 (Not Found)</span></div>
+
+
+<span class="c1"># Test case to check the successful response of get_distance endpoint</span>
+<div class="viewcode-block" id="test_get_distance_success">
+<a class="viewcode-back" href="../../index.html#app.test_app.test_get_distance_success">[docs]</a>
+<span class="k">def</span> <span class="nf">test_get_distance_success</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test case to verify the successful response of the get_distance endpoint.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        client: The Flask test client.</span>
+
+<span class="sd">    Asserts:</span>
+<span class="sd">        - The response status code is 200 (OK).</span>
+<span class="sd">        - The response JSON contains &#39;distance&#39;.</span>
+<span class="sd">        - The distance value is non-negative.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get_distance/?lat1=0&amp;lon1=0&amp;lat2=1&amp;lon2=1&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>  <span class="c1"># Check if the status code is 200 (OK)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>  <span class="c1"># Get the response data in JSON format</span>
+    <span class="k">assert</span> <span class="s1">&#39;distance&#39;</span> <span class="ow">in</span> <span class="n">data</span>  <span class="c1"># Check if &#39;distance&#39; is in the response data</span>
+    <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span>  <span class="c1"># Check if the distance is non-negative</span></div>
+
+
+<span class="c1"># Test case to check the failure response of get_distance endpoint with missing parameters</span>
+<div class="viewcode-block" id="test_get_distance_failure">
+<a class="viewcode-back" href="../../index.html#app.test_app.test_get_distance_failure">[docs]</a>
+<span class="k">def</span> <span class="nf">test_get_distance_failure</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Test case to verify the failure response of the get_distance endpoint when parameters are missing.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        client: The Flask test client.</span>
+
+<span class="sd">    Asserts:</span>
+<span class="sd">        - The response status code is 400 (Bad Request).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/get_distance/?lat1=0&amp;lon1=0&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">400</span>  <span class="c1"># Check if the status code is 400 (Bad Request)</span></div>
+
+
+<span class="c1"># Parameterized test case to check the get_coordinates endpoint for multiple cities</span>
+<div class="viewcode-block" id="test_the_result_is_correct_for_all_inputs_get_coordinates">
+<a class="viewcode-back" href="../../index.html#app.test_app.test_the_result_is_correct_for_all_inputs_get_coordinates">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;city_name, expected_lat, expected_lon&quot;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="mf">51.5074</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1278</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="mf">48.8566</span><span class="p">,</span> <span class="mf">2.3522</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mf">35.6895</span><span class="p">,</span> <span class="mf">139.6917</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="k">def</span> <span class="nf">test_the_result_is_correct_for_all_inputs_get_coordinates</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">city_name</span><span class="p">,</span> <span class="n">expected_lat</span><span class="p">,</span> <span class="n">expected_lon</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameterized test case to verify the get_coordinates endpoint for multiple cities.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        client: The Flask test client.</span>
+<span class="sd">        city_name: The name of the city to get coordinates for.</span>
+<span class="sd">        expected_lat: The expected latitude of the city.</span>
+<span class="sd">        expected_lon: The expected longitude of the city.</span>
+
+<span class="sd">    Asserts:</span>
+<span class="sd">        - The response status code is 200 (OK).</span>
+<span class="sd">        - The latitude value is within 1km tolerance of the expected latitude.</span>
+<span class="sd">        - The longitude value is within 1km tolerance of the expected longitude.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/get_coordinates/?city_name=</span><span class="si">{</span><span class="n">city_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>  <span class="c1"># Check if the status code is 200 (OK)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>  <span class="c1"># Get the response data in JSON format</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="n">expected_lat</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span>  <span class="c1"># Check if the latitude is within 1km tolerance</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="n">expected_lon</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span>  <span class="c1"># Check if the longitude is within 1km tolerance</span></div>
+
+
+<span class="c1"># Parameterized test case to check the get_distance endpoint for multiple pairs of coordinates</span>
+<div class="viewcode-block" id="test_the_result_is_correct_for_all_inputs_get_distance">
+<a class="viewcode-back" href="../../index.html#app.test_app.test_the_result_is_correct_for_all_inputs_get_distance">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;lat1, lon1, lat2, lon2, expected_distance&quot;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mf">51.5074</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1278</span><span class="p">,</span> <span class="mf">48.8566</span><span class="p">,</span> <span class="mf">2.3522</span><span class="p">,</span> <span class="mf">343.56</span><span class="p">),</span>  <span class="c1"># London to Paris</span>
+    <span class="p">(</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">,</span> <span class="mf">34.0522</span><span class="p">,</span> <span class="o">-</span><span class="mf">118.2437</span><span class="p">,</span> <span class="mi">3940</span><span class="p">),</span>  <span class="c1"># New York to Los Angeles</span>
+    <span class="p">(</span><span class="mf">35.6895</span><span class="p">,</span> <span class="mf">139.6917</span><span class="p">,</span> <span class="mf">37.7749</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.4194</span><span class="p">,</span> <span class="mi">8289</span><span class="p">),</span>  <span class="c1"># Tokyo to San Francisco</span>
+    <span class="p">(</span><span class="mf">52.5200</span><span class="p">,</span> <span class="mf">13.4050</span><span class="p">,</span> <span class="mf">41.9028</span><span class="p">,</span> <span class="mf">12.4964</span><span class="p">,</span> <span class="mi">1184</span><span class="p">)</span>  <span class="c1"># Berlin to Rome</span>
+<span class="p">])</span>
+<span class="k">def</span> <span class="nf">test_the_result_is_correct_for_all_inputs_get_distance</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">expected_distance</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameterized test case to verify the get_distance endpoint for multiple pairs of coordinates.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        client: The Flask test client.</span>
+<span class="sd">        lat1: The latitude of the first point.</span>
+<span class="sd">        lon1: The longitude of the first point.</span>
+<span class="sd">        lat2: The latitude of the second point.</span>
+<span class="sd">        lon2: The longitude of the second point.</span>
+<span class="sd">        expected_distance: The expected distance between the two points.</span>
+
+<span class="sd">    Asserts:</span>
+<span class="sd">        - The response status code is 200 (OK).</span>
+<span class="sd">        - The distance value is within 5km tolerance of the expected distance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/get_distance/?lat1=</span><span class="si">{</span><span class="n">lat1</span><span class="si">}</span><span class="s2">&amp;lon1=</span><span class="si">{</span><span class="n">lon1</span><span class="si">}</span><span class="s2">&amp;lat2=</span><span class="si">{</span><span class="n">lat2</span><span class="si">}</span><span class="s2">&amp;lon2=</span><span class="si">{</span><span class="n">lon2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>  <span class="c1"># Check if the status code is 200 (OK)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>  <span class="c1"># Get the response data in JSON format</span>
+    <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">expected_distance</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span>  <span class="c1"># Check if the distance is within 5km tolerance</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Luis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

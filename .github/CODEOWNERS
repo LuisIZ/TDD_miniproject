@@ -1,0 +1,5 @@
+# This is a comment
+*       @LuisIZ                 # All files in the repository
+*.py    @LuisIZ                      # All Python files
+/docs/  @LuisIZ                    # All files in the docs directory
+/app/   @LuisIZ                     # All files in the api directory

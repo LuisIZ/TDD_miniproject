@@ -1,4 +1,4 @@
-# This is a comment
+# CODEOWNERS
 *       @LuisIZ                 # All files in the repository
 *.py    @LuisIZ                      # All Python files
 /docs/  @LuisIZ                    # All files in the docs directory
